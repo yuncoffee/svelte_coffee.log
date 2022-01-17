@@ -1,1 +1,11 @@
 /* Variables and mixins declared here will be available in all other SCSS files */
+
+$sy-white: #fff;
+$sy-gray-01: #f4f4f4;
+
+@mixin font($size: 1.2rem, $weight: 500, $space: 0, $height: 1.5em) {
+	font-size: $size;
+	font-weight: $weight;
+	letter-spacing: $space;
+	line-height: $height;
+}

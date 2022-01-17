@@ -1,5 +1,6 @@
 <script>
 import PageHeader from '../component/PageHeader.svelte';
+import "../reset.css"
 import "../app.scss";
 import PageFooter from '../component/PageFooter.svelte';
 </script>
@@ -10,4 +11,3 @@ import PageFooter from '../component/PageFooter.svelte';
 	<!-- 하위 페이지에서 나오는 영역 -->
 	<slot />
 </main>
-<PageFooter/>

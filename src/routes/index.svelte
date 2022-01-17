@@ -8,4 +8,12 @@
 
 
 
-<h1>Welcome to SvelteKit</h1>
+<section class="main-section">
+
+</section>
+
+<style lang="scss">
+	.main-section{
+		height: 100%;
+	}
+</style>
