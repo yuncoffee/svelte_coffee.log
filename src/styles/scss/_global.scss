@@ -1,0 +1,131 @@
+@charset 'utf-8';
+
+@import "./mixin/mixin";
+@import "./mixin/font";
+
+a{
+    text-decoration: none;
+    &:visited {
+        color: currentColor;
+    }
+}
+
+$displays: "flex", "block", "inline", "inline-block", "none";
+@each $display in $displays {
+    [s-display="#{$display}"] {
+        display: #{$display};
+    }
+}
+
+// align-items
+$alignItems: "center", "start", "end", "flex-start", "flex-end";
+@each $alignItem in $alignItems {
+    [s-align="#{$alignItem}"] {
+        align-items: #{$alignItem};
+    }
+}
+
+// justify-content
+$justifyContents: "center", "left", "right", "start", "end", "flex-start",
+    "flex-end", "space-between", "space-around", "space-around";
+@each $justifyContent in $justifyContents {
+    [s-justify="#{$justifyContent}"] {
+        justify-content: #{$justifyContent};
+    }
+}
+
+$positions: "static", "relative", "absolute", "fixed", "sticky";
+@each $position in $positions {
+    [s-position="#{$position}"] {
+        position: #{$position};
+    }
+}
+
+// gap 범위 0 ~ 64px
+@for $gaps from 0 to 64 {
+    [s-gap="#{$gaps}px"] {
+        gap: #{$gaps}px;
+    }
+}
+
+$spaces: 0, 2, 4, 6, 8, 12, 14, 16, 20, 24, 28, 30, 32, 36, 40, 48, 56;
+@each $space in $spaces {
+    //  margin
+    [s-margin-x="#{$space}px"] {
+        margin: 0 #{$space}px;
+    }
+    [s-margin-y="#{$space}px"] {
+        margin: #{$space}px 0;
+    }
+    [s-margin-top="#{$space}px"] {
+        margin-top: #{$space}px;
+    }
+    [s-margin-btm="#{$space}px"] {
+        margin-bottom: #{$space}px;
+    }
+    [s-margin-left="#{$space}px"] {
+        margin-left: #{$space}px;
+    }
+    [s-margin-right="#{$space}px"] {
+        margin-right: #{$space}px;
+    }
+
+    //  padding
+    [s-padding-x="#{$space}px"] {
+        padding: 0 #{$space}px;
+    }
+    [s-padding-y="#{$space}px"] {
+        padding: #{$space}px 0;
+    }
+    [s-padding-top="#{$space}px"] {
+        padding-top: #{$space}px;
+    }
+    [s-padding-btm="#{$space}px"] {
+        padding-bottom: #{$space}px;
+    }
+    [s-padding-left="#{$space}px"] {
+        padding-left: #{$space}px;
+    }
+    [s-padding-right="#{$space}px"] {
+        padding-right: #{$space}px;
+    }
+
+    //  top, bottom, left, right
+    [s-top="#{$space}px"] {
+        top: #{$space}px;
+    }
+    [s-btm="#{$space}px"] {
+        bottom: #{$space}px;
+    }
+    [s-left="#{$space}px"] {
+        left: #{$space}px;
+    }
+    [s-right="#{$space}px"] {
+        right: #{$space}px;
+    }
+}
+
+// font-size
+$font-sizes: "h1", "h2", "h3", "h4", "h5", "h6";
+@each $font-size in $font-sizes {
+    [s-font-size="#{$font-size}"] {
+        @if $font-size == "h1" {
+            @include h1();
+        }
+        @if $font-size == "h2" {
+            @include h2();
+        }
+        @if $font-size == "h3" {
+            @include h3();
+        }
+        @if $font-size == "h4" {
+            @include h4();
+        }
+        @if $font-size == "h5" {
+            @include h5();
+        }
+        @if $font-size == "h6" {
+            @include h6();
+        }
+    }
+}
